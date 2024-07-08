@@ -22,7 +22,7 @@ export function Landing() {
             <circle cx="20" cy="16" r="2"></circle>
             <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"></path>
           </svg>
-          <span className="sr-only">Scoop App</span>
+          <span className="sr-only">ScooperHero</span>
         </a>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <a
@@ -158,7 +158,7 @@ export function Landing() {
           <div className="container grid items-center justify-center gap-4 px-4 md:px-6 mx-auto">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-[#4A90E2]">
-                Download the Scoop App Today 📲
+                Download ScooperHero Today 📲
               </h2>
               <p className="max-w-[600px] text-[#757575] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Get the Scoop App on your device and start connecting with
@@ -183,7 +183,7 @@ export function Landing() {
         </section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-[#4A90E2] text-white">
-        <p className="text-xs">© 2024 Scoop App. All rights reserved.</p>
+        <p className="text-xs">© 2024 ScooperHero. All rights reserved.</p>
       </footer>
     </div>
   );
