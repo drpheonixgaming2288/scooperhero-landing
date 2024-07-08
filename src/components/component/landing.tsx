@@ -53,7 +53,7 @@ export function Landing() {
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[#E6F2FC]">
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -91,7 +91,7 @@ export function Landing() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-[#E6F2FC]">
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-[#F8E71C] px-3 py-1 text-sm text-[#4A90E2] font-bold">
@@ -155,7 +155,7 @@ export function Landing() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 border-t bg-[#E6F2FC]">
-          <div className="container grid items-center justify-center gap-4 px-4 md:px-6">
+          <div className="container grid items-center justify-center gap-4 px-4 md:px-6 mx-auto">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-[#4A90E2]">
                 Download the Scoop App Today 📲
