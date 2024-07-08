@@ -1,13 +1,20 @@
 "use client";
 import { useState } from "react";
+import MailchimpForm from "./MailchimpForm";
 
 const Landing = () => {
   const [email, setEmail] = useState("");
+  const [buttonLoading, setButtonLoading] = useState(false);
 
-  const handleSubmit = () => {
-    event.preventDefault();
-    // Handle the form submission logic (e.g., send email to API)
-    console.log("Email submitted:", email);
+  const handleSubscribe = () => {
+    const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+
+    e.preventDefault();
+    email &&
+      email.indexOf("@") > -1 &&
+      onValidated({
+        EMAIL: email,
+      });
   };
 
   return (
@@ -34,8 +41,8 @@ const Landing = () => {
             </svg>
             <span className="sr-only">ScooperHero</span>
           </a> */}
-          {/* <nav className="ml-auto flex gap-4 sm:gap-6"> */}
-            {/* <a
+        {/* <nav className="ml-auto flex gap-4 sm:gap-6"> */}
+        {/* <a
               href="#"
               className="text-sm font-semibold hover:underline underline-offset-4 text-[#ffc]"
             >
@@ -59,7 +66,7 @@ const Landing = () => {
             >
               Contact
             </a> */}
-            {/* <form
+        {/* <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-2 min-[400px]:flex-row overflow-hidden"
             >
@@ -94,8 +101,8 @@ const Landing = () => {
                       hassle-free, 💩-free pet care experience.
                     </p>
                   </div>
-                  <form
-                    onSubmit={handleSubmit}
+                  {/* <form
+                    onSubmit={handleSubscribe}
                     className="flex flex-col gap-2 min-[400px]:flex-row overflow-hidden"
                   >
                     <input
@@ -103,16 +110,28 @@ const Landing = () => {
                       placeholder="Enter your email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      disabled={status === "Loading"}
                       className="h-10 px-4 border-sm text-sm text-[#000] border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#4A90E2]"
                       required
                     />
                     <button
                       type="submit"
+                      disabled={status === "Loading"}
                       className="h-10 px-8 rounded bg-[#4A90E2] text-sm font-medium text-white shadow transition-colors hover:bg-[#3D7AB9] focus:outline-none focus:ring-1 focus:ring-[#4A90E2]"
                     >
                       Join the Waitlist
                     </button>
-                  </form>
+                    <div className="text-sm server-message pt-4 text-green-600">
+                      {status === "Success" ? (
+                        <p className="text-green-600">{responseMsg}</p>
+                      ) : null}
+                      {status === "Error" ? (
+                        <p className="text-red-600">{responseMsg}</p>
+                      ) : null}
+                    </div>
+                  </form> */}
+
+                  <MailchimpForm />
                 </div>
                 <img
                   src="/output.jpg"
@@ -198,25 +217,9 @@ const Landing = () => {
                   Sign up to be the first to know when ScooperHero is available.
                 </p>
               </div>
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-2 min-[400px]:flex-row justify-center"
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-10 px-4 rounded text-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-[#4A90E2]"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="h-10 px-8 rounded bg-[#4A90E2] text-sm font-medium text-white shadow transition-colors hover:bg-[#3D7AB9] focus:outline-none focus:ring-1 focus:ring-[#4A90E2]"
-                >
-                  Join the Waitlist
-                </button>
-              </form>
+              <div className="mx-auto">
+                <MailchimpForm />
+              </div>
             </div>
           </section>
         </main>
