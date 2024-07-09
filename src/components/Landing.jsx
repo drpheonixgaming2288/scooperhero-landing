@@ -131,7 +131,7 @@ const Landing = () => {
                   <MailchimpForm />
                 </div>
                 <img
-                  src="/output.jpg"
+                  src="output.jpg"
                   width="550"
                   height="550"
                   alt="Hero"
@@ -195,7 +195,7 @@ const Landing = () => {
                   </ul>
                 </div>
                 <img
-                  src="/petdog.jpg"
+                  src="petdog.jpg"
                   width="550"
                   height="310"
                   alt="Image"
