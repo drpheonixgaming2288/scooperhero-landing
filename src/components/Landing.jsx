@@ -2,13 +2,20 @@
 import { useState } from "react";
 import MailchimpForm from "./MailchimpForm";
 
+import { Montserrat, Merriweather, Pacifico, Lobster } from 'next/font/google'
+
+const montserrat = Montserrat({ subsets: ['latin'], display: 'swap', weight: "600" })
+const merriweather = Merriweather({ subsets: ['latin'], display: 'swap', weight: "400" })
+const pacifico = Pacifico({ subsets: ['latin'], display: 'swap', weight: "400" })
+const lobster = Lobster({ subsets: ['latin'], display: 'swap', weight: "400" })
+
 const Landing = () => {
   const [email, setEmail] = useState("");
 
   return (
     <>
       <div className="flex flex-col min-h-[100vh]">
-        {/* <header className="px-4 lg:px-6 h-12 flex items-center sticky top-0 bg-[#4A90E2] text-white">
+        <header className="px-4 lg:px-6 h-12 flex items-center sticky top-0 bg-[#4A90E2] text-white">
           <a className="flex items-center justify-center" href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,9 +35,11 @@ const Landing = () => {
               <path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"></path>
             </svg>
             <span className="sr-only">ScooperHero</span>
-          </a> */}
-        {/* <nav className="ml-auto flex gap-4 sm:gap-6"> */}
-        {/* <a
+          </a>
+          <nav className="ml-auto flex gap-4 sm:gap-6">
+            <a className={`font-bold text-xl ${montserrat.className}`}>🐾 SCOOPER HERO 💩</a>
+          </nav>
+          {/* <a
               href="#"
               className="text-sm font-semibold hover:underline underline-offset-4 text-[#ffc]"
             >
@@ -53,7 +62,7 @@ const Landing = () => {
               href="#"
             >
               Contact
-            </a> */}
+            </a>
         {/* <form
               onSubmit={handleSubmit}
               className="flex flex-col gap-2 min-[400px]:flex-row overflow-hidden"
@@ -73,16 +82,16 @@ const Landing = () => {
                 Join the Waitlist
               </button>
             </form>
-          </nav>
-        </header> */}
+          </nav> */}
+        </header>
         <main className="flex-1">
           <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-[#E6F2FC]">
             <div className="container px-4 md:px-6 mx-auto">
               <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                 <div className="flex flex-col justify-center space-y-4">
                   <div className="space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-[#4A90E2]">
-                      The Ultimate Pet Waste Management Solution 🐾
+                    <h1 className={`text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-[#4A90E2]`}>
+                      The <span className={`${lobster.className}`}>Ultimate</span> Pet Waste Management Solution 🐾
                     </h1>
                     <p className="max-w-[600px] text-[#757575] md:text-xl">
                       Connecting pet owners with professional scoopers for a
@@ -212,7 +221,9 @@ const Landing = () => {
           </section>
         </main>
         <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-[#4A90E2] text-white">
-          <p className="text-xs">© 2024 ScooperHero. All rights reserved.</p>
+          <p className="text-xs">
+            © 2024 Hangar2Apps LLC. All rights reserved.
+          </p>
         </footer>
       </div>
     </>
