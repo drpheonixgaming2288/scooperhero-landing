@@ -4,18 +4,6 @@ import MailchimpForm from "./MailchimpForm";
 
 const Landing = () => {
   const [email, setEmail] = useState("");
-  const [buttonLoading, setButtonLoading] = useState(false);
-
-  const handleSubscribe = () => {
-    const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
-
-    e.preventDefault();
-    email &&
-      email.indexOf("@") > -1 &&
-      onValidated({
-        EMAIL: email,
-      });
-  };
 
   return (
     <>

@@ -1,7 +1,7 @@
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import { useState } from "react";
 
-const CustomForm = ({ status, message, onValidated }) => {
+const CustomForm = ({ status, message, subscribe }) => {
   const MAILCHIMP_URL = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
 
   const [email, setEmail] = useState("");
@@ -9,12 +9,8 @@ const CustomForm = ({ status, message, onValidated }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && email.indexOf("@") > -1) {
-      onValidated({ EMAIL: email });
+      subscribe({ EMAIL: email });
     }
-  };
-
-  const clearFields = () => {
-    setEmail("");
   };
 
   return (
@@ -74,11 +70,7 @@ const MailchimpForm = (props) => {
       <MailchimpSubscribe
         url={url}
         render={({ subscribe, status, message }) => (
-          <CustomForm
-            status={status}
-            message={message}
-            onValidated={(formData) => subscribe(formData)}
-          />
+          <CustomForm status={status} message={message} subscribe={subscribe} />
         )}
       />
     </div>
