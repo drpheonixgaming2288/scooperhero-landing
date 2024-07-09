@@ -195,7 +195,7 @@ const Landing = () => {
                   </ul>
                 </div>
                 <img
-                  src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX || ''}/petdog.jpg`}
+                  src={"petdog.jpg"}
                   width="550"
                   height="310"
                   alt="Image"
